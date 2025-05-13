@@ -45,6 +45,14 @@ app.get('/', (req, res) => {
   res.render("index.ejs");
 });
 
+app.get('/placeOrder', (req, res) =>  {
+    res.render("placeOrder.ejs");
+});
+
+app.get('/orderConfirmation', (req, res) =>  {
+    res.render("orderConfirmation.ejs");
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
