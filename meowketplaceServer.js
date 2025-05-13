@@ -45,11 +45,11 @@ app.get('/', (req, res) => {
   res.render("index.ejs");
 });
 
-app.get('/placeOrder', (req, res) =>  {
+app.get('/placeOrder', (req, res) =>  {  // add code to store the info from the place order form into the database 
     res.render("placeOrder.ejs");
 });
 
-app.get('/orderConfirmation', (req, res) =>  {
+app.get('/orderConfirmation', (req, res) =>  { // edit this one to POST and retrieve information from the database
     res.render("orderConfirmation.ejs");
 });
 
