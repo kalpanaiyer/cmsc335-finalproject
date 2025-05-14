@@ -1,8 +1,8 @@
 # The Meowketplace
-**Submitted by:** __ (directory id: __)  
-**Group Members:** Kalpana Iyer (kiyer124), Esther Yu (eyu50207), Rudra Singh (dir id)  
-**App Description:** Users can order cat toys and cat food.   
+**Submitted by:** Kalpana Iyer (directory id: kiyer124)  
+**Group Members:** Kalpana Iyer (kiyer124), Esther Yu (eyu50207), Rudra Singh (rudra314)  
+**App Description:** Users can order cat toys/food and view a random cat fact.  
 **YouTube Video Link:** <link url here>  
-**APIs:** apiName1 (url), apiName2 (url)  
-**Contact Email:** __  
-**Deployed App Link:** <link url here>
+**APIs:** Cat Fact (<https://catfact.ninja/>)  
+**Contact Email:** <kiyer124@terpmail.umd.edu>  
+**Deployed App Link:** <https://cmsc335-finalproject-cbft.onrender.com/>
