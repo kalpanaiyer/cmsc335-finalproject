@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Confirmation</title>
   <link rel="stylesheet" href="../confirmation.css">
 </head>
+
 <body>
   <h1>Order Confirmation</h1>
   <h1>Thank you for your order!</h1>
@@ -20,23 +22,29 @@
       <br>
       <p><b>Toys Ordered:</b></p>
       <ul>
-  <% (Array.isArray(toys) ? toys : [toys]).forEach(toy => { %>
-    <li><%= toy %></li>
-  <% }) %>
-</ul>
+        <% (Array.isArray(toys) ? toys : [toys]).forEach(toy=> { %>
+          <li>
+            <%= toy %>
+          </li>
+          <% }) %>
+      </ul>
       <p><b>Food Ordered:</b></p>
-<ul>
-  <% (Array.isArray(items) ? items : [items]).forEach(item => { %>
-    <li><%= item %></li>
-  <% }) %>
-</ul>    </div>
-    <div id="cat-fact"> 
+      <ul>
+        <% (Array.isArray(items) ? items : [items]).forEach(item=> { %>
+          <li>
+            <%= item %>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+    <div id="cat-fact">
       <h1>Your Special Cat Fact</h1>
-     <%- fact %>
-      <img id="cat" src="../images/jumping_cat.gif" alt="Jumping Cat Gif">
+      <%- fact %>
+        <img id="cat" src="../images/jumping_cat.gif" alt="Jumping Cat Gif">
     </div>
   </div>
-  
-    <a href="/"><img id="home" src="../images/home_icon.png" href="/" alt="home icon"></a>
+
+  <a href="/"><img id="home" src="../images/home_icon.png" href="/" alt="home icon"></a>
 </body>
+
 </html>
