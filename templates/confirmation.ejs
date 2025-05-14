@@ -14,23 +14,29 @@
   <div id="box">
     <div>
       <h1>Receipt:</h1>
-      <p><b>Name:</b> <%- name %></p>
+      <p><b>Name:</b> <%- fullname %></p>
       <p><b>Email:</b> <%- email %></p>
       <p><b>Phone Number:</b> <%- number %></p>
       <br>
       <p><b>Toys Ordered:</b></p>
-      <%- toys %>
+      <ul>
+  <% (Array.isArray(toys) ? toys : [toys]).forEach(toy => { %>
+    <li><%= toy %></li>
+  <% }) %>
+</ul>
       <p><b>Food Ordered:</b></p>
-      <%- items %>
-    </div>
-    <div id="cat-fact">
+<ul>
+  <% (Array.isArray(items) ? items : [items]).forEach(item => { %>
+    <li><%= item %></li>
+  <% }) %>
+</ul>    </div>
+    <div id="cat-fact"> 
       <h1>Your Special Cat Fact</h1>
-      <!-- insert cat fact here ig? -->
-      If  you feed your cat too many fishies, they willget 9 big and explod
+     <%- fact %>
       <img id="cat" src="../images/jumping_cat.gif" alt="Jumping Cat Gif">
     </div>
   </div>
   
-  <img id="home" src="../images/home_icon.png" href="/" alt="home icon">
+    <a href="/"><img id="home" src="../images/home_icon.png" href="/" alt="home icon"></a>
 </body>
 </html>
