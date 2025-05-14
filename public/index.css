@@ -17,6 +17,7 @@ body {
 h1 {
   font-family: "DynaPuff";
   font-weight: 400;
+  margin-bottom: 1rem !important;
 }
 
 #title {
@@ -42,8 +43,8 @@ h1 {
   padding: 0;
 }
 
-#index-box button {
-  width: 90%;
+button.box-item {
+  width: 100%;
   border: none;
   border-radius: calc(infinity * 1px);
   font-family: "Dynapuff";
@@ -52,10 +53,11 @@ h1 {
   background-color: gray;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
+
+
 
 #index-box img {
   width: 70%;
@@ -64,4 +66,9 @@ h1 {
 #index-box #welcome-line {
   font-family: "Dynapuff";
   font-size: x-large;
+}
+
+a {
+  width: 90%;
+  margin: 0;
 }

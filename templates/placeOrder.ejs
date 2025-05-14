@@ -9,10 +9,10 @@
 <body>
   <div>
     <h1>Order Form</h1>
-    <form>
+    <form action="/confirmation" method="POST">
       <fieldset>
         <legend>Info</legend>
-        Name: <input type="text" name="name" required>
+        Name: <input type="text" name="fullname" required>
         <br>
         Email: <input type="email" name="email" required>
         <br>
@@ -58,7 +58,8 @@
       <button type="reset">Clear</button>
     </form>
 
-    <img src="../images/home_icon.png" href="/" alt="home icon">
+    <a href="/"><img src="../images/home_icon.png" href="/" alt="home icon"></a>
+
   </div>
 </body>
 </html>
