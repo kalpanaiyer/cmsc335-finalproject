@@ -50,7 +50,7 @@ app.get('/placeOrder', (req, res) =>  {  // add code to store the info from the 
 });
 
 app.get('/orderConfirmation', (req, res) =>  { // edit this one to POST and retrieve information from the database
-    res.render("orderConfirmation.ejs");
+    res.render("confirmation.ejs");
 });
 
 
