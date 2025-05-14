@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="../confirmation.css">
+</head>
+<body>
+  <h1>Order Confirmation</h1>
+  <h1>Thank you for your order!</h1>
+  <br>
+
+  <div id="box">
+    <div>
+      <h1>Receipt:</h1>
+      <p><b>Name:</b> <%- name %></p>
+      <p><b>Email:</b> <%- email %></p>
+      <p><b>Phone Number:</b> <%- number %></p>
+      <br>
+      <p><b>Toys Ordered:</b></p>
+      <%- toys %>
+      <p><b>Food Ordered:</b></p>
+      <%- items %>
+    </div>
+    <div id="cat-fact">
+      <h1>Your Special Cat Fact</h1>
+      <!-- insert cat fact here ig? -->
+      If  you feed your cat too many fishies, they willget 9 big and explod
+      <img id="cat" src="../images/jumping_cat.gif" alt="Jumping Cat Gif">
+    </div>
+  </div>
+  
+  <img id="home" src="../images/home_icon.png" href="/" alt="home icon">
+</body>
+</html>

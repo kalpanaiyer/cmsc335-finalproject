@@ -1,12 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8" />
-	<title>App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Order</title>
+  <link rel="stylesheet" href="../order.css">
 </head>
-
 <body>
-    <h1>ASHFSDJFHDSJKFHSKDJ</h1>
-    To view your order, select<a href="/orderConfirmation"> Review Application
+  <div>
+    <h1>Order Form</h1>
+    <form>
+      <fieldset>
+        <legend>Info</legend>
+        Name: <input type="text" name="name" required>
+        <br>
+        Email: <input type="email" name="email" required>
+        <br>
+        Number: <input type="text" name="number" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Toys</legend>
+        Toys: 
+        <select name="toys" multiple required>
+          <option>Mouse toy</option>
+          <option>Catnip toy</option>
+          <option>Laser pointer</option>
+          <option>Scratching post</option>
+          <option>Feather wand</option>
+        </select>
+        <br>
+        Quantity: <input type="number" name="quantity" min="1" max="10" required>
+        <br>
+        Extra Info:
+        <br>
+        <textarea name="extra-info" cols="50" rows="6"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Food</legend>
+        Item:
+        <select name="items" multiple required>
+          <option>Meow Mix</option>
+          <option>Meow Mix (Deluxe)</option>
+          <option>Pawesome Feast</option>
+          <option>Kitty Kibble Krunch</option>
+          <option>Meowgic Meals</option>
+          <option>Pawtisserie</option>
+        </select>
+        <br>
+        Extra Info:
+        <br>
+        <textarea name="extra-info" cols="50" rows="6"></textarea>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Clear</button>
+    </form>
+
+    <img src="../images/home_icon.png" href="/" alt="home icon">
+  </div>
 </body>
+</html>
