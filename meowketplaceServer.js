@@ -51,9 +51,23 @@ app.get('/placeOrder', (req, res) =>  {  // add code to store the info from the 
     res.render("placeOrder");
 });
 
-app.post('/confirmation', (req, res) => {
+app.post('/confirmation', async (req, res) => {
   const { fullname, email, number, toys, items } = req.body;
 
+  try {
+    await mongoCollection.insertOne({
+      fullname,
+      email,
+      number,
+      toys,
+      items,
+      createdAt: new Date()
+    });
+    console.log('Order saved to database');
+  } catch (insertErr) {
+    console.error('Failed to save order:', insertErr);
+  }
+  
   const options = {
     method: 'GET',
     url: 'https://catfact.ninja/fact?max_length=140',
@@ -86,8 +100,14 @@ app.post('/confirmation', (req, res) => {
   });
 });
 
-app.get('/viewAllOrders', (req, res) =>  {  // add code to show all orders from mongo, add async if needed 
-    res.render("viewAllOrders");
+app.get('/viewAllOrders', async (req, res) => {
+  try {
+    const orders = await mongoCollection.find().toArray();
+    res.render('viewAllOrders', { orders });
+  } catch (err) {
+    console.error('Error fetching orders:', err);
+    res.status(500).send('Error retrieving orders');
+  }
 });
 
 

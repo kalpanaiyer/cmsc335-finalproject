@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>All Orders</title>
+  <link rel="stylesheet" href="../viewAllOrders.css" />
 </head>
-
 <body>
-    <h1> gedt  them all orders </h1>
-        <a href="/"><img src="../images/home_icon.png" href="/" alt="home icon"></a>
+  <h1>All Orders</h1>
 
+  <div id="orders-container">
+    <% if (!orders || orders.length === 0) { %>
+      <p>No orders found.</p>
+    <% } else { %>
+      <% orders.forEach(order => { %>
+        <div class="order">
+          <p><b>Name:</b> <%= order.fullname %></p>
+          <p><b>Email:</b> <%= order.email %></p>
+          <p><b>Phone:</b> <%= order.number %></p>
+
+          <p><b>Toys Ordered:</b></p>
+          <ul>
+            <% (Array.isArray(order.toys) ? order.toys : [order.toys]).forEach(toy => { %>
+              <li><%= toy %></li>
+            <% }) %>
+          </ul>
+
+          <p><b>Food Ordered:</b></p>
+          <ul>
+            <% (Array.isArray(order.items) ? order.items : [order.items]).forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+
+  <a href="/">
+    <img id="home" src="../images/home_icon.png" alt="home icon"/>
+  </a>
 </body>
+</html>
