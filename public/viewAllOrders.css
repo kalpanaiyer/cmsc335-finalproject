@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+html {
+  min-height: 100%;
+  background-color: #E0BFB8;
+}
+
+body {
+  font-family: "Delius";
+  padding: 2rem;
+}
+
+h1 {
+  font-family: "DynaPuff";
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+#orders-container {
+  margin-top: 1rem;
+}
+
+.order {
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.order p {
+  margin: 0.25rem 0;
+}
+
+.order ul {
+  margin: 0.5rem 0 1rem 1rem;
+}
+
+#home {
+  width: 5rem;
+  cursor: pointer;
+  display: block;
+  margin-top: 2rem;
+}
