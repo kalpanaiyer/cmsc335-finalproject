@@ -4,9 +4,11 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const request = require('request');
+const router = express.Router();
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+
+const { MongoClient, ServerApiVersion, MongoGCPError } = require('mongodb');
 
 const uri = process.env.MONGO_CONNECTION_STRING;
 const client = new MongoClient(uri, {
@@ -43,12 +45,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.render("index");
 });
 
-app.get('/placeOrder', (req, res) =>  {  // add code to store the info from the place order form into the database, add async if needed 
-    res.render("placeOrder");
+router.get('/placeOrder', (req, res) =>  {  
+  res.render("placeOrder");
 });
 
 app.post('/confirmation', async (req, res) => {
@@ -100,7 +102,7 @@ app.post('/confirmation', async (req, res) => {
   });
 });
 
-app.get('/viewAllOrders', async (req, res) => {
+router.get('/viewAllOrders', async (req, res) => { // using express.router requirement
   try {
     const orders = await mongoCollection.find().toArray();
     res.render('viewAllOrders', { orders });
@@ -111,6 +113,7 @@ app.get('/viewAllOrders', async (req, res) => {
 });
 
 
+app.use('/', router);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
